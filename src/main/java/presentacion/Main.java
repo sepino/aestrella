@@ -1,7 +1,6 @@
 package presentacion;
 
 import negocio.*;
-import presentacion.swingGUI.Ventana;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,7 +16,6 @@ public class Main {
     private static ArrayList<Punto> obstaculos = new ArrayList<Punto>();
     private static AEstrella aEstrella;
     private static Ruta ruta;
-    private static Ventana ventana;
 
     public static void obtenerDatos() {
         System.out.println("Introduce Nº de filas: ");
@@ -69,22 +67,20 @@ public class Main {
                 case 3:
                     aEstrella = new AEstrella(mapa, origen, destino);
                     Punto punto = aEstrella.buscarRuta();
-                    aEstrella.crearRuta(punto, origen);
-                    mapaAux = new Mapa(fil, col, origen, destino);
-                    for (Punto puntoAux : aEstrella.getCamino()) {
-                        puntoAux.setClase(ClasesPunto.CAMINO);
-                        mapaAux.colocar(puntoAux);
+                    if (punto != null) {
+                        aEstrella.crearRuta(punto, origen);
+                        mapaAux = new Mapa(fil, col, origen, destino);
+                        for (Punto puntoAux : aEstrella.getCamino()) {
+                            puntoAux.setClase(ClasesPunto.CAMINO);
+                            mapaAux.colocar(puntoAux);
+                        }
+                        for (Punto obstaculo : obstaculos) {
+                            mapaAux.colocar(obstaculo);
+                        }
+                        mapaAux.mostrar();
+                    } else {
+                        System.out.println("No existe ningún camino al destino.");
                     }
-                    for (Punto obstaculo : obstaculos) {
-                        mapaAux.colocar(obstaculo);
-                    }
-                    mapaAux.mostrar();
-                    break;
-                case 4:
-                    if (ventana == null) {
-                        ventana = new Ventana("Mapa");
-                    }
-                    ventana.setVisible(true);
                     break;
                 case 0:
                     System.exit(0);

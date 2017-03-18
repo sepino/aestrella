@@ -30,7 +30,6 @@ public class AEstrella {
 
         while (listaAbierta.size() != 0) {
             actual = listaAbierta.getFirst();
-            listaAbierta.removeFirst();
             listaCerrada.add(actual);
 
             if (actual.equals(destino)) {
