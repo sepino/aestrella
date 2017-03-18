@@ -23,21 +23,11 @@ public class Mapa implements Cloneable {
     }
 
     private void fill() {
-        Punto punto;
         for (int i = 0; i < fils; i++) {
             for (int j = 0; j < cols; j++) {
                 mapa[i][j] = new Punto(i, j, ClasesPunto.VACIO);
             }
         }
-
-        // TODO Buscar adyacentes cuando sea necesario.
-        /*
-        for (int i = 0; i < fils-1; i++) {
-            for (int j = 0; j < cols-1; j++) {
-                buscarAdyacentes(obtener(i, j));
-            }
-        }
-        */
     }
 
     public void mostrar() {
@@ -100,16 +90,4 @@ public class Mapa implements Cloneable {
         }
     }
 
-    @Override
-    public Mapa clone() {
-        Mapa clone = null;
-
-        try {
-            clone = (Mapa) super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-
-        return clone;
-    }
 }

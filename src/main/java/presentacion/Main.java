@@ -4,6 +4,7 @@ import negocio.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
     private static Mapa mapa;
@@ -15,7 +16,7 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
     private static ArrayList<Punto> obstaculos = new ArrayList<Punto>();
     private static AEstrella aEstrella;
-    private static Ruta ruta;
+    private static Stack<Punto> ruta;
 
     public static void obtenerDatos() {
         System.out.println("Introduce Nº de filas: ");

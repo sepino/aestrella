@@ -1,6 +1,7 @@
 package negocio;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class AEstrella {
     private Mapa mapa;
@@ -8,7 +9,7 @@ public class AEstrella {
     private Punto destino;
     private ArrayList<Punto> listaCerrada;
     private ListaOrdenada listaAbierta;
-    private Ruta ruta;
+    private Stack<Punto> ruta;
 
     public AEstrella(Mapa mapa, Punto origen, Punto destino) {
         this.mapa = mapa;
@@ -18,7 +19,7 @@ public class AEstrella {
         listaCerrada = new ArrayList();
         listaAbierta = new ListaOrdenada();
 
-        ruta = new Ruta();
+        ruta = new Stack<Punto>();
     }
 
     public Punto buscarRuta() {
