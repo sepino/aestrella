@@ -20,7 +20,4 @@ public class ListaOrdenada extends ArrayList<Punto> {
         return result;
     }
 
-    public void removeFirst() {
-        this.remove(0);
-    }
 }
