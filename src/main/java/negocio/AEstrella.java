@@ -3,6 +3,9 @@ package negocio;
 import java.util.ArrayList;
 import java.util.Stack;
 
+/**
+ * @author Sergio πno
+ */
 public class AEstrella {
     private Mapa mapa;
     private Punto origen;

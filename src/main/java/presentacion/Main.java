@@ -57,7 +57,7 @@ public class Main {
         } while (next);
 
         while (true) {
-            System.out.println("[1] Ver mapa \n[2] Introducir obstaculo \n[3] Calcular ruta \n[4] Ver en GUI \n[0] Salir");
+            System.out.println("[1] Ver mapa \n[2] Introducir obstaculo \n[3] Calcular ruta \n[0] Salir");
             switch (sc.nextInt()) {
                 case 1:
                     mapa.mostrar();
