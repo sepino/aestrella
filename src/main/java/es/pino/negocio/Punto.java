@@ -1,4 +1,4 @@
-package negocio;
+package es.pino.negocio;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package negocio;
+package es.pino.negocio;
 
 public enum ClasesPunto {
     OBSTACULO('X'),

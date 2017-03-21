@@ -1,7 +1,6 @@
-package negocio;
+package es.pino.negocio;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ListaOrdenada extends ArrayList<Punto> {
 

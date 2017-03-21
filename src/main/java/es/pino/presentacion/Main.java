@@ -1,10 +1,9 @@
-package presentacion;
+package es.pino.presentacion;
 
-import negocio.*;
+import es.pino.negocio.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
     private static Mapa mapa;

@@ -1,4 +1,4 @@
-package negocio;
+package es.pino.negocio;
 
 public class Mapa implements Cloneable {
     private int fils;
