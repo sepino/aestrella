@@ -5,7 +5,8 @@ public enum ClasesPunto {
     VACIO('·'),
     INICIO('I'),
     DESTINO('D'),
-    CAMINO('#');
+    CAMINO('#'),
+    WAYPOINT('W');
 
     private char simbolo;
 

@@ -18,11 +18,9 @@ public class AEstrella {
         this.mapa = mapa;
         this.origen = origen;
         this.destino = destino;
-
-        listaCerrada = new ArrayList();
-        listaAbierta = new ListaOrdenada();
-
-        ruta = new Stack<Punto>();
+        this.listaCerrada = new ArrayList();
+        this.listaAbierta = new ListaOrdenada();
+        this.ruta = new Stack<Punto>();
     }
 
     public Punto buscarRuta() {
