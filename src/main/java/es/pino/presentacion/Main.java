@@ -16,7 +16,7 @@ public class Main {
     private static ArrayList<Punto> obstaculos = new ArrayList<Punto>();
     private static ArrayList<Punto> waypoints = new ArrayList<Punto>();
     private static AEstrella aEstrella;
-    private static ArrayList<Punto> ruta = new ArrayList<Punto>();
+    private static ArrayList<Punto> ruta;
 
     public static void obtenerDatos() {
         System.out.println("Introduce Nº de filas: ");
@@ -83,9 +83,13 @@ public class Main {
                     introducirObstaculo();
                     break;
                 case 3:
+                    mapaAux = new Mapa(fil, col, origen, destino);
+                    ruta = new ArrayList<Punto>();
                     Punto origenAux = origen;
-                    while (waypoints.size() > 0) {
-                        aEstrella = new AEstrella(mapa, origenAux, waypoints.remove(0));
+                    ArrayList<Punto> waypointsAux = new ArrayList<Punto>(waypoints);
+
+                    while (waypointsAux.size() > 0) {
+                        aEstrella = new AEstrella(mapa, origenAux, waypointsAux.remove(0));
                         Punto punto = aEstrella.buscarRuta();
                         if (punto != null) {
                             aEstrella.crearRuta(punto, origenAux);
@@ -102,7 +106,6 @@ public class Main {
                     Punto punto = aEstrella.buscarRuta();
                     if (punto != null) {
                         aEstrella.crearRuta(punto, origenAux);
-                        mapaAux = new Mapa(fil, col, origen, destino);
                         for (Punto puntoAux : aEstrella.getCamino()) {
                             ruta.add(puntoAux);
                         }
